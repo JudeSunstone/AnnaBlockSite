@@ -58,18 +58,18 @@ body {
     background-size: cover;
     background-position: center center;
     color: #fff;
-    padding-top: 260px;
+    padding-top: 214px;
     padding-bottom: 285px;
 }
-
 .pizza {
     position: absolute;
-    right: 0;
-    top: -230px;
+    right: -15px;
+    top: -200px;
 }
 .title {
     font-size: 50px;
-    margin-bottom: 23px;
+    margin-bottom: 10px;
+    /*letter-spacing: 0.5em;*/
 }
 .decsription {
     font-size: 25px;
@@ -77,6 +77,7 @@ body {
     min-width: 570px;
     font-family: 'Roboto' sans-serif;
     margin-bottom: 24px;
+    margin-top: 0;
 }
 .btn {
     display: block;
@@ -86,8 +87,8 @@ body {
     font-weight: 800;
     text-transform: uppercase;
     border: 2px solid #fff;
-    padding: 16px 0;
-    min-width: 190px;
+    padding: 12px 0;
+    min-width: 188px;
     text-align: center;
     /*в данный момент при позиционированиях возникает проблема, что у меня не отображается так же, как в сафари, а все блоки в кучу*/
 }
@@ -101,7 +102,7 @@ body {
     display: inline-block;
     padding-right: 127px;
     padding-left: 127px; /*ширина элемента + отступ*/
-    margin-bottom: 20px;
+    margin-bottom: 11px;
 }
 /*это можно через флексбокс, например, до и после поставить два дива и там сделать css*/
 .h2::before, .h2:after {
@@ -135,19 +136,11 @@ body {
     margin-bottom: 65px;
 }
 .menu > li {
-    /*margin-left: 15px;
-    margin-right: 15px;*/
+    margin-left: 23px;
+    margin-right: 15px;
     position: relative;
-    padding-left: 20px;
+    padding-left: 28px;
     padding-right: 15px;
-}
-.menu > li > a {
-    text-decoration: none;
-    color: #494848;
-    font-size: 18px;
-    font-weight: 700;
-    text-transform: uppercase;
-    padding-bottom: 18px;
 }
 .menu>li::before {
     content: "";
@@ -157,6 +150,14 @@ body {
     display: block;
     position: absolute;
     left: 0; /*делает палочки непривязанными в бокам ссылок*/
+}
+.menu > li > a {
+    text-decoration: none;
+    color: #494848;
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding-bottom: 18px;
 }
 .menu>li:first-child::before {
     display: none;
@@ -170,6 +171,7 @@ body {
     position: absolute;
     left: 0;
     right: 0;
+    bottom: 0;
     margin: 0 auto;
     display: block;
     width: 0;
@@ -182,11 +184,12 @@ body {
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.11);
     display: flex;
     justify-content: space-between;
+    margin-bottom: 150px;
 }
 .box-item {
-    padding: 64px 0 58px 55px;
+    padding: 54px 0 41px 55px;
     box-sizing: content-box;
-    max-width: 374px;
+    /*max-width: 374px;*/
 }
 .number {
     font-family: 'Roboto', sans-serif;
@@ -228,7 +231,6 @@ body {
 .box-text {
     border-right: 1px solid #eaeaea;
     padding-right: 55px;
-    flex-basis: ;
 }
 .box-item:last-child .box-text{
     border-right: none;
@@ -254,13 +256,72 @@ body {
     background-position: center center;
     text-decoration: none;
     background-repeat: no-repeat;
-    padding: 29px 58px; /*inscpected*/
+    padding: 29px 58px; /*inscpected  и чтобы появилась картинка*/
+}
+.page {
+    padding-top: 120px;
+    padding-bottom: 107px;
+
 }
 footer {
     background-image: url(../image/footer.jpg);
-    padding: 44px 0;
+    padding: 22px 0;
     color: #fff;
     font: 20px;
     font-family: 'Roboto', sans-serif;
     text-align: center;
+    text-transform: uppercase;
+}
+@media (max-width: 1200px) {
+    .wrapper {
+        min-width: 800px;
+    }
+    .pizza {
+        display: none;
+    }
+    .banner {
+        padding-top: 76px;
+        padding-bottom: 100px;
+    }
+    .h2 {
+        font-size: 35px;
+    }
+    .h2 + p  {
+        font-size: 18px;
+    }
+    .menu > li {
+        padding-left: 15px;
+        padding-right: 15px;
+        position: relative;
+    }
+    .box {
+        flex-direction: column;
+    }
+    .box-text {
+        border-right: none;
+        padding-right: 0;
+        padding-bottom: 30px;
+        border-bottom: 1px solid #eaeaea;
+    }
+    .box-item:last-child .box-text {
+        border-bottom: none;
+    }
+}
+@media (max-width: 800px) {
+    .navigation {
+        flex-direction: column;
+    }
+    .nav {
+        margin-top: 34px;
+    }
+    .h2::before, .h2::after {
+        display: none;
+    }
+    .btn-start {
+        background-size: contain;
+    }
+    footer {
+        padding: 13px 0;
+        font-size: 15px;
+    }
 }
